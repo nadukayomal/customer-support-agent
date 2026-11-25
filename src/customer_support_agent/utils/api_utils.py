@@ -1,5 +1,12 @@
-from uuid import uuid4
+"""
+Chat utilities for the FastAPI layer.
 
+Helper functions used by the chat endpoint. At this stage the agent is not
+connected yet, so the reply is a simple echo of the customer's message.
+Replace the echo with the real agent call once the agent is ready.
+"""
+
+from uuid import uuid4
 from customer_support_agent.schema.chat import ChatRequest, ChatResponse
 
 
