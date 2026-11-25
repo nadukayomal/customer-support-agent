@@ -1,0 +1,47 @@
+# AI / embeddings (typical with pgvector)
+openai>=1.54.0
+tiktoken>=0.8.0# --- API layer ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+python-multipart>=0.0.9
+httpx>=0.27
+sse-starlette>=2.1
+
+# --- Auth & security ---
+pyjwt>=2.8
+slowapi>=0.1.9
+
+# --- Database (Supabase Postgres + pgvector) ---
+supabase>=2.5
+sqlalchemy[asyncio]>=2.0
+asyncpg>=0.29
+pgvector>=0.3
+alembic>=1.13
+
+# --- Vector DB ---
+qdrant-client>=1.9
+
+# --- LLM, embeddings, agent ---
+anthropic>=0.40
+langgraph>=0.2
+tiktoken>=0.7
+
+# --- Retrieval quality ---
+rank-bm25>=0.2.2
+sentence-transformers>=3.0
+
+# --- Observability ---
+langfuse>=3.0
+structlog>=24.1
+
+# --- Reliability & utilities ---
+tenacity>=8.3
+orjson>=3.10
+python-dotenv>=1.0
+
+# --- Local package (editable) ---
+-e .
+
+

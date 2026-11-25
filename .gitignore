@@ -1,0 +1,148 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env/
+.python-version
+
+# Distribution / packaging
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-wheel-metadata/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit tests / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.typos_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Environments and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+secrets/
+credentials.json
+service-account*.json
+.supabase/
+
+# Logs and local runtime
+logs/
+*.log
+*.out
+*.pid
+local/
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Databases and local data
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+data/
+uploads/
+artifacts/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ML / embeddings caches
+.cache/
+huggingface/
+.huggingface/
+transformers_cache/
+sentence_transformers/
+*.pt
+*.bin
+*.onnx
+*.safetensors
+models/
+checkpoints/
+
+# Vector DB local state
+qdrant_storage/
+.qdrant/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Cursor
+.cursor/
+.cursorignore
+
+# Misc
+*.bak
+*.orig
+.history/
+.direnv/
+.pre-commit-config.yaml.bak
