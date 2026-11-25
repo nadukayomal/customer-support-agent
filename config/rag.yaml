@@ -1,0 +1,43 @@
+# Knowledge-base retrieval: chunking, search, semantic cache (CAG) and corrective RAG (CRAG).
+version: 1
+
+qdrant:
+  # collection_name: support_kb # change name later
+  # QDRANT_URL and QDRANT_API_KEY come from .env
+
+chunking:
+  fixed:
+    chunk_size: 800
+    chunk_overlap: 100
+  semantic:
+    max_chunk_size: 1000
+    min_chunk_size: 200
+  sliding:
+    window_size: 512
+    stride_size: 256
+  parent_child:
+    parent_size: 1200
+    child_size: 250
+    child_overlap: 50
+  late:
+    base_size: 1000
+    split_size: 300
+    context_window: 150
+
+retrieval:
+  top_k: 4
+  similarity_threshold: 0.7          # tune on your retrieval test set; depends on the embedding model
+
+# Semantic cache in its own Qdrant collection. A hit needs cosine similarity >= threshold.
+# TTL is checked at read time.
+cag:
+  enabled: true                      # NEW: kill switch
+  collection_name: support_cag_cache
+  similarity_threshold: 0.90         # 0.90-0.95 suits paraphrases
+  ttl_seconds: 86400                 # renamed from cache_ttl; 24 h, 0 = no expiry
+  max_cache_size: 1000               # informational unless eviction is implemented
+  cache_personalized: false          # NEW: never cache answers built from customer or order data
+
+crag:
+  confidence_threshold: 0.6
+  expanded_k: 8

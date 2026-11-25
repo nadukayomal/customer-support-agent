@@ -1,0 +1,18 @@
+# Which provider and tier to use, plus LLM and embedding defaults. Model names live in models.yaml.
+version: 1
+
+provider:
+  default: openrouter          # openrouter | openai | anthropic | google | groq
+  tier: general                # general | strong | reason (tier -> model name is mapped in code)
+  openrouter_base_url: https://openrouter.ai/api/v1
+
+llm:
+  temperature: 0.0             # deterministic answers suit support use cases
+  max_tokens: 2000
+  streaming: false             # set true once the /chat/stream endpoint exists
+
+embedding:
+  tier: small                  # small = 1536 dims, default = 3072 dims
+  dimensions: 1536             # NEW: must match vector(N) in Postgres and the Qdrant collection
+  batch_size: 100
+  show_progress: false

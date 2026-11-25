@@ -1,0 +1,17 @@
+version: 1
+
+paths:                               # relative to the project root
+  data_dir: data
+  kb_dir: data/kb
+  logs_dir: logs
+
+logging:
+  enabled: true
+  level: INFO                        # DEBUG | INFO | WARNING | ERROR
+  log_tokens: true
+  log_latency: true
+  redact_pii: true                   # NEW: mask emails, phones, names in logs and traces
+
+observability:
+  enabled: true                      # false disables all Langfuse tracing
+  # LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, LANGFUSE_HOST come from .env

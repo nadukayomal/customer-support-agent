@@ -1,0 +1,51 @@
+# Model catalogue: maps each tier (general / strong / reason) to a concrete model ID per provider.
+# Last verified: 2026-11-25. Model IDs change often, so re-check against each provider's
+# models and deprecations page before every release.
+version: 2
+
+openrouter:                              # default gateway; one API key for many providers
+  chat:                                  # confirm exact slugs at https://openrouter.ai/models
+    general: openai/gpt-6-luna           # fast, low cost
+    strong: openai/gpt-6-sol             # higher capability
+    reason: openai/gpt-6-astra           # hardest reasoning tasks
+  embedding:
+    default: openai/text-embedding-3-large   # 3072 dimensions
+    small: openai/text-embedding-3-small     # 1536 dimensions
+
+openai:
+  chat:
+    general: gpt-6-luna
+    strong: gpt-6-sol                    # confirm ID on the OpenAI models page
+    reason: gpt-6-astra
+  embedding:
+    default: text-embedding-3-large
+    small: text-embedding-3-small
+
+anthropic:
+  chat:
+    general: claude-haiku-5-5
+    strong: claude-sonnet-5-5
+    reason: claude-opus-5-5
+
+google:
+  chat:                                  # confirm in Google AI Studio; 3.x names change quickly
+    general: gemini-3.6-flash
+    strong: gemini-3.7-flash
+    reason: gemini-3.1-pro-preview       # preview model, no shutdown date announced
+
+groq:
+  chat:
+    general: openai/gpt-oss-20b
+    strong: openai/gpt-oss-120b
+    reason: openai/gpt-oss-120b
+
+deepseek:
+  chat:
+    general: deepseek-flash              # V4.1 Flash alias
+    strong: deepseek-v4-pro
+    reason: deepseek-v4-pro              # enable thinking mode in the request
+
+# Dimensions per embedding model. Must match vector(N) in Postgres and the Qdrant collection.
+embedding_dimensions:
+  text-embedding-3-large: 3072
+  text-embedding-3-small: 1536
